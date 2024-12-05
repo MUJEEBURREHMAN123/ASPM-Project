@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Slider</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-0 px-4 sm:px-6 lg:px-8 xl:max-w-full xl:px-2">
+            <div class="relative flex justify-between items-center py-4">
+                <!-- Hamburger Icon (for smaller screens, positioned on the left) -->
+                <div class="lg:hidden absolute left-0 flex items-center">
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
+
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const items = document.querySelectorAll('[data-carousel-item]');
+        const indicators = document.querySelectorAll('[data-carousel-slide-to]');
+        const prevBtn = document.querySelector('[data-carousel-prev]');
+        const nextBtn = document.querySelector('[data-carousel-next]');
+        let currentIndex = 0;
+
+        // Function to display the current slide
+        const showItem = (index) => {
+            items.forEach((item, i) => {
+                item.classList.remove('active');
+                item.style.opacity = 0;
+                item.style.zIndex = 0;
+            });
+            currentIndex = index;
+            items[currentIndex].classList.add('active');
+            items[currentIndex].style.zIndex = 1;
+            setTimeout(() => {
+                items[currentIndex].style.opacity = 1;
+            }, 50);
+
+            // Update the indicators
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('bg-gray-600', i === currentIndex);
+                indicator.setAttribute('aria-current', i === currentIndex ? 'true' : 'false');
+            });
+        };
+
+        // Event listeners for navigation buttons
+        nextBtn.addEventListener('click', () => {
+            clearInterval(intervalId); // Stop automatic sliding
+            currentIndex = (currentIndex + 1) % items.length;
+            showItem(currentIndex);
+            intervalId = setInterval(autoSlide, 5000); // Restart automatic sliding
+        });
+
+        prevBtn.addEventListener('click', () => {
+            clearInterval(intervalId); // Stop automatic sliding
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            showItem(currentIndex);
+            intervalId = setInterval(autoSlide, 5000); // Restart automatic sliding
+        });
+
+        // Event listeners for indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                clearInterval(intervalId); // Stop automatic sliding
+                currentIndex = index;
+                showItem(currentIndex);
+                intervalId = setInterval(autoSlide, 5000); // Restart automatic sliding
+            });
+        });
+
+        // Function for auto sliding
+        const autoSlide = () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            showItem(currentIndex);
+        };
+
+        // Start the auto slider
+        let intervalId = setInterval(autoSlide, 5000);
+
+        // Initially show the first item
+        showItem(currentIndex);
+    });
+    
+</script>
+
+<!-- Styles -->
+<style>
+         .dropdown-arrow {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-right: 10px; /* Add padding to accommodate the arrow */
+                    text-decoration: none;
+                }
+        
+                .dropdown-arrow svg {
+                    width: 16px;
+                    height: 16px;
+                    fill: currentColor; /* Matches the text color */
+                }
+      a:active {
+        border-bottom: 2px dotted gray; /* Adds a dotted border on active */
+    }
+    .carousel-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: 0;
+        transition: opacity 0.7s ease-in-out;
+    }
+    .carousel-item.active {
+        z-index: 1;
+    }
+    .bg-gray-600 {
+        background-color: #4A5568;
+    }
+</style>
+
+
+
+
+  
+</body>
+</html>

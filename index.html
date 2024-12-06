@@ -8,140 +8,119 @@
 </head>
 <body class="bg-gray-100">
 
-    <nav class="bg-white shadow-md">
-        <div class="max-w-7xl mx-0 px-4 sm:px-6 lg:px-8 xl:max-w-full xl:px-2">
-            <div class="relative flex justify-between items-center py-4">
-                <!-- Hamburger Icon (for smaller screens, positioned on the left) -->
-                <div class="lg:hidden absolute left-0 flex items-center">
-                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
-                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-
-                    </button>
-                </div>
-
-            </div>
+<!-- Footer -->
+<footer class="bg-gray-100 py-8 ">
+<div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+        <!-- What's New Section -->
+        <div>
+            <h3 class="text-gray-700 font-semibold mb-3">What's new</h3>
+            <ul class="space-y-2">
+                <li><a href="https://www.microsoft.com/en-us/d/surface-laptop-studio-2/8rqr54krf1dz" class="text-gray-600 hover:text-gray-900 hover:underline">Surface Book 3</a></li>
+                <li><a href="https://www.microsoft.com/en-us/surface/devices/surface-pro-11th-edition" class="text-gray-600 hover:text-gray-900 hover:underline">Surface Pro</a></li>
+                <li><a href="https://www.microsoft.com/en/microsoft-copilot/personal-ai-assistant" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft Copilot</a></li>
+                <li><a href="https://www.microsoft.com/en/microsoft-365?market=af" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft 365</a></li>
+                <li><a href="https://www.microsoft.com/en-pk/microsoft-products-and-apps" class="text-gray-600 hover:text-gray-900 hover:underline">Explore Microsoft products</a></li>
+                <li><a href="https://www.microsoft.com/en-pk/windows/windows-11-apps" class="text-gray-600 hover:text-gray-900 hover:underline">Windows 11 apps</a></li>
+            </ul>
         </div>
-    </nav>
-    
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-    
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-    
 
+        <!-- Microsoft Store Section -->
+        <div>
+            <h3 class="text-gray-700 font-semibold mb-3">Microsoft Store</h3>
+            <ul class="space-y-2">
+                <li><a href="https://account.microsoft.com/account/Account?refd=www.microsoft.com&ru=https%3A%2F%2Faccount.microsoft.com%2F%3Frefd%3Dwww.microsoft.com&destrt=home.landing" class="text-gray-600 hover:text-gray-900 hover:underline">Account profile</a></li>
+                <li><a href="https://www.microsoft.com/en-pk/download" class="text-gray-600 hover:text-gray-900 hover:underline">Download Center</a></li>
+                <li><a href="https://support.microsoft.com/en-us/account-billing/returning-items-you-bought-from-microsoft-for-exchange-or-refund-81629012-aa4f-f48b-2394-8596f415072b" class="text-gray-600 hover:text-gray-900 hover:underline">Returns</a></li>
+                <li><a href="https://myaccount.microsoft.com/?ref=amc" class="text-gray-600 hover:text-gray-900 hover:underline">Order tracking</a></li>
+            </ul>
+        </div>
 
-<!-- JavaScript -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const items = document.querySelectorAll('[data-carousel-item]');
-        const indicators = document.querySelectorAll('[data-carousel-slide-to]');
-        const prevBtn = document.querySelector('[data-carousel-prev]');
-        const nextBtn = document.querySelector('[data-carousel-next]');
-        let currentIndex = 0;
+        <!-- Education Section -->
+        <div>
+            <h3 class="text-gray-700 font-semibold mb-3">Education</h3>
+            <ul class="space-y-2">
+                <li><a href="https://www.microsoft.com/en-pk/education" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft in education</a></li>
+                <li><a href="https://www.microsoft.com/en-us/education/devices/overview" class="text-gray-600 hover:text-gray-900 hover:underline">Devices for education</a></li>
+                <li><a href="https://www.microsoft.com/en-us/education/products/teams" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft Teams for Education</a></li>
+                <li><a href="https://www.microsoft.com/en-us/education/products/microsoft-365" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft 365 Education</a></li>
+                <li><a href="https://www.microsoft.com/en-pk/education/products/office" class="text-gray-600 hover:text-gray-900 hover:underline">Office Education</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/training/educator-center/?source=mec" class="text-gray-600 hover:text-gray-900 hover:underline">Education training and development</a></li>
+                <li><a href="https://www.microsoft.com/en-us/store/b/education" class="text-gray-600 hover:text-gray-900 hover:underline">Deals for students and parents</a></li>
+                <li><a href="https://azure.microsoft.com/en-us/free/students/" class="text-gray-600 hover:text-gray-900 hover:underline">Azure for students</a></li>
+            </ul>
+        </div>
 
-        // Function to display the current slide
-        const showItem = (index) => {
-            items.forEach((item, i) => {
-                item.classList.remove('active');
-                item.style.opacity = 0;
-                item.style.zIndex = 0;
-            });
-            currentIndex = index;
-            items[currentIndex].classList.add('active');
-            items[currentIndex].style.zIndex = 1;
-            setTimeout(() => {
-                items[currentIndex].style.opacity = 1;
-            }, 50);
+        <!-- Business Section -->
+        <div>
+            <h3 class="text-gray-700 font-semibold mb-3">Business</h3>
+            <ul class="space-y-2">
+                <li><a href="https://www.microsoft.com/en/microsoft-cloud" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft Cloud</a></li>
+                <li><a href="https://www.microsoft.com/en/security" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft Security</a></li>
+                <li><a href="https://azure.microsoft.com/en-us/" class="text-gray-600 hover:text-gray-900 hover:underline">Azure</a></li>
+                <li><a href="https://www.microsoft.com/en/dynamics-365" class="text-gray-600 hover:text-gray-900 hover:underline">Dynamics 365</a></li>
+                <li><a href="https://www.microsoft.com/en/microsoft-365/business?market=af" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft 365</a></li>
+                <li><a href="https://about.ads.microsoft.com/en" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft Advertising</a></li>
+                <li><a href="https://www.microsoft.com/en/microsoft-365/copilot/copilot-for-work" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft 365 Copilot</a></li>
+                <li><a href="https://www.microsoft.com/en/microsoft-teams/group-chat-software" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft Teams</a></li>
+            </ul>
+        </div>
 
-            // Update the indicators
-            indicators.forEach((indicator, i) => {
-                indicator.classList.toggle('bg-gray-600', i === currentIndex);
-                indicator.setAttribute('aria-current', i === currentIndex ? 'true' : 'false');
-            });
-        };
+        <!-- Developer & IT Section -->
+        <div>
+            <h3 class="text-gray-700 font-semibold mb-3">Developer & IT</h3>
+            <ul class="space-y-2">
+                <li><a href="https://developer.microsoft.com/en-us/" class="text-gray-600 hover:text-gray-900 hover:underline">Developer Center</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/docs/" class="text-gray-600 hover:text-gray-900 hover:underline">Documentation</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft Learn</a></li>
+                <li><a href="https://techcommunity.microsoft.com/" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft Tech Community</a></li>
+                <li><a href="https://azuremarketplace.microsoft.com/en-US/" class="text-gray-600 hover:text-gray-900 hover:underline">Azure Marketplace</a></li>
+                <li><a href="https://appsource.microsoft.com/en-us/" class="text-gray-600 hover:text-gray-900 hover:underline">AppSource</a></li>
+                <li><a href="https://www.microsoft.com/en/power-platform" class="text-gray-600 hover:text-gray-900 hover:underline">Microsoft Power Platform</a></li>
+            </ul>
+        </div>
 
-        // Event listeners for navigation buttons
-        nextBtn.addEventListener('click', () => {
-            clearInterval(intervalId); // Stop automatic sliding
-            currentIndex = (currentIndex + 1) % items.length;
-            showItem(currentIndex);
-            intervalId = setInterval(autoSlide, 5000); // Restart automatic sliding
-        });
+        <!-- Company Section -->
+        <div>
+            <h3 class="text-gray-700 font-semibold mb-3">Company</h3>
+            <ul class="space-y-2">
+                <li><a href="https://careers.microsoft.com/v2/global/en/home.html" class="text-gray-600 hover:text-gray-900 hover:underline">Careers</a></li>
+                <li><a href="https://www.microsoft.com/en-us/about" class="text-gray-600 hover:text-gray-900 hover:underline">About Microsoft</a></li>
+                <li><a href="https://news.microsoft.com/source/" class="text-gray-600 hover:text-gray-900 hover:underline">Company news</a></li>
+                <li><a href="https://www.microsoft.com/en-ca/privacy" class="text-gray-600 hover:text-gray-900 hover:underline">Privacy at Microsoft</a></li>
+                <li><a href="https://www.microsoft.com/en-us/investor/default" class="text-gray-600 hover:text-gray-900 hover:underline">Investors</a></li>
+                <li><a href="https://www.microsoft.com/en/sustainability/" class="text-gray-600 hover:text-gray-900 hover:underline">Sustainability</a></li>
+            </ul>
+        </div>
+    </div>
 
-        prevBtn.addEventListener('click', () => {
-            clearInterval(intervalId); // Stop automatic sliding
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            showItem(currentIndex);
-            intervalId = setInterval(autoSlide, 5000); // Restart automatic sliding
-        });
-
-        // Event listeners for indicators
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                clearInterval(intervalId); // Stop automatic sliding
-                currentIndex = index;
-                showItem(currentIndex);
-                intervalId = setInterval(autoSlide, 5000); // Restart automatic sliding
-            });
-        });
-
-        // Function for auto sliding
-        const autoSlide = () => {
-            currentIndex = (currentIndex + 1) % items.length;
-            showItem(currentIndex);
-        };
-
-        // Start the auto slider
-        let intervalId = setInterval(autoSlide, 5000);
-
-        // Initially show the first item
-        showItem(currentIndex);
-    });
-    
-</script>
-
-<!-- Styles -->
-<style>
-         .dropdown-arrow {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding-right: 10px; /* Add padding to accommodate the arrow */
-                    text-decoration: none;
-                }
-        
-                .dropdown-arrow svg {
-                    width: 16px;
-                    height: 16px;
-                    fill: currentColor; /* Matches the text color */
-                }
-      a:active {
-        border-bottom: 2px dotted gray; /* Adds a dotted border on active */
-    }
-    .carousel-item {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        z-index: 0;
-        transition: opacity 0.7s ease-in-out;
-    }
-    .carousel-item.active {
-        z-index: 1;
-    }
-    .bg-gray-600 {
-        background-color: #4A5568;
-    }
-</style>
-
+    <!-- Footer Bottom Section -->
+    <div
+        class="mt-8 border-t border-none pt-6 flex flex-col sm:flex-row items-center justify-between text-gray-600 text-xs">
+        <div class="flex items-center space-x-4">
+            <div class="flex flex-wrap items-start space-x-2">
+                <img src="https://via.placeholder.com/20" alt="Country flag" class="w-5 h-5 rounded-full">
+                <a href="https://www.microsoft.com/en-pk/locale" class="hover:underline">English (Pakistan)</a>
+            </div>
+            <button
+                class="flex items-center border border-cyan-500 bg-blue-700 rounded-full px-2 text-gray-800">
+                <p class="bg-white text-blue-600 rounded-full  mr-1 ">✓</p>
+                <p class="bg-blue-700">X</p>
+            </button>
+            <a href="https://account.microsoft.com/privacy/third-party-ads?scrolltonewtoggle=true" class="hover:underline">Your Privacy Choices</a>
+            <a href="https://www.microsoft.com/en-us/privacy/microsoft-consumer-health-data-privacy-policy" class="hover:underline">Consumer Health Privacy</a>
+        </div>
+        <div class="mt-4 sm:mt-0 space-x-4">
+            <a href="https://support.microsoft.com/contactus" class="hover:underline">Contact Microsoft</a>
+            <a href="https://www.microsoft.com/en-us/privacy/privacystatement" class="hover:underline">Privacy</a>
+            <a href="https://www.microsoft.com/en-us/legal/terms-of-use?oneroute=true" class="hover:underline">Terms of use</a>
+            <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks?oneroute=true" class="hover:underline">Trademarks</a>
+            <a href="https://account.microsoft.com/privacy/ad-settings/signedout?refd=www.microsoft.com&ru=https%3A%2F%2Faccount.microsoft.com%2Fprivacy%2Fad-settings%3Frefd%3Dwww.microsoft.com" class="hover:underline">About our ads</a>
+            <span>© Microsoft 2024</span>
+        </div>
+    </div>
+</div>
+</footer>
 
 
 
